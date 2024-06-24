@@ -1,0 +1,414 @@
+* {
+    padding: 0;
+    margin: 0;
+  }
+  body {
+    background-color: #121212;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 196px;
+    background-color: #000000;
+    padding: 24px;
+  }
+  .sidebar .logo img {
+    width: 130px;
+  }
+  .sidebar .navigation ul {
+    list-style: none;
+    margin-top: 20px;
+  }
+  .sidebar .navigation ul li {
+    padding: 10px 0px;
+  }
+  .sidebar .navigation ul li a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+  }
+  .sidebar .navigation ul li a:hover,
+  .sidebar .navigation ul li a:active,
+  .sidebar .navigation ul li a:focus {
+    color: #ffffff;
+  }
+  .sidebar .navigation ul li a:hover .fa,
+  .sidebar .navigation ul li a:active .fa,
+  .sidebar .navigation ul li a:focus .fa {
+    color: #b3b3b3;
+  }
+  .sidebar .navigation ul li .fa {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  .sidebar .navigation ul li a:hover .fa:hover,
+  .sidebar .navigation ul li a:hover .fa:active,
+  .sidebar .navigation ul li a:hover .fa:focus {
+    color: #ffffff;
+  }
+  
+  .sidebar .policies {
+    position: absolute;
+    bottom: 40px;
+  }
+  .sidebar .policies ul {
+    list-style: none;
+  }
+  .sidebar .policies ul li {
+    padding-bottom: 5px;
+  }
+  .sidebar .policies ul li a {
+    color: #b3b3b3;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 10px;
+  }
+  .sidebar .policies ul li a:hover,
+  .sidebar .policies ul li a:active,
+  .sidebar .policies ul li a:focus {
+    text-decoration: underline;
+  }
+  .main-container {
+    margin-left: 245px;
+    margin-bottom: 100px;
+  }
+  
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #101010;
+    padding: 14px 30px;
+  }
+  .topbar .prev-next-buttons button {
+    color: #7a7a7a;
+    cursor: not-allowed;
+    width: 34px;
+    height: 34px;
+    border-radius: 100%;
+    font-size: 18px;
+    border: 0px;
+    background-color: #090909;
+    margin-right: 10px;
+  }
+  .topbar .navbar {
+    display: flex;
+    align-items: center;
+  }
+  .topbar .navbar ul {
+    list-style: none;
+  }
+  .topbar .navbar ul li {
+    display: inline-block;
+    margin: 0px 8px;
+    width: 70px;
+  }
+  .topbar .navbar ul li a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+  .topbar .navbar ul li a:hover,
+  .topbar .navbar ul li a:focus {
+    color: #ffffff;
+    font-size: 15px;
+  }
+  .topbar .navbar ul li.divider {
+    color: #ffffff;
+    font-size: 26px;
+    margin: 0px 20px;
+    width: auto;
+  }
+  .topbar .navbar button {
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 14px 30px;
+    border: 0px;
+    border-radius: 40px;
+    cursor: pointer;
+    margin-left: 20px;
+  }
+  .topbar .navbar button:hover,
+  .topbar .navbar button:active,
+  .topbar .navbar button:focus {
+    background-color: #f2f2f2;
+  }
+
+  .profile-icon img {
+    background-color: #f2f2f2;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+/* Popup Menu */
+.popup-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #333;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width: 200px;
+    border-radius: 8px;
+}
+
+.popup-menu a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.popup-menu a:hover {
+    background-color: #575757;
+}
+
+.popup-menu hr {
+    border: 1px solid #444;
+    margin: 0;
+}
+
+.show {
+    display: block;
+}
+
+/* Input Search */
+.tabSearch {
+    margin-left: 30px;
+    width: 340px;
+    background-color: #1e1e1e; /* Warna abu-abu untuk latar belakang */
+    color: #ffffff; /* Warna putih untuk teks */
+    border: 2px solid #494848; /* Border warna putih */
+    padding: 10px 40px 10px 40px; /* Ruang di dalam input untuk tampilan yang lebih baik */
+    border-radius: 100px; /* Membuat sudut-sudut sedikit membulat */
+    font-size: 16px; /* Ukuran font */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transisi yang halus untuk efek hover */
+    background-image: url('assets/search_icon.png'); /* Menambahkan logo sebagai latar belakang */
+    background-repeat: no-repeat;
+    background-position: 10px center; /* Posisi logo di dalam input */
+    background-size: 20px 20px; /* Ukuran logo di dalam input */
+}
+
+.tabSearch:hover {
+    background-color: #484747; /* Warna abu-abu lebih gelap saat hover */
+    color: #ffffff; /* Warna teks berubah menjadi hitam saat hover */
+    border-color: #fff; /* Warna border berubah menjadi putih saat hover */
+}
+
+/* Audio Container Styles */
+.audio-container {
+    background-color: #1f1f1f; /* Warna background untuk audio */
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    max-width: 1000px;
+    margin-left: 20px;
+}
+
+.audio-container img {
+    border-radius: 30px;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.audio-details {
+    flex-grow: 1;
+    width: 500px;
+}
+
+.audio-details h2 {
+    font-size: 24px;
+    color: #ffffff; /* Warna teks judul */
+    margin: 0 0 10px 0;
+}
+
+.audio-details p {
+    font-size: 18px;
+    color: #aaaaaa; /* Warna teks artist */
+    margin: 0 0 10px 0;
+}
+
+.audio-controls {
+    width: 100%;
+}
+
+.audio-controls audio {
+    width: 100%;
+    outline: none; /* Menghilangkan outline */
+}
+
+/* Mengubah warna tombol audio menjadi putih */
+.audio-controls audio::-webkit-media-controls-panel {
+    background-color: #343434;
+    color: white;
+}
+
+.audio-controls audio::-webkit-media-controls-play-button,
+.audio-controls audio::-webkit-media-controls-current-time-display,
+.audio-controls audio::-webkit-media-controls-time-remaining-display,
+.audio-controls audio::-webkit-media-controls-timeline,
+.audio-controls audio::-webkit-media-controls-volume-slider,
+.audio-controls audio::-webkit-media-controls-mute-button,
+.audio-controls audio::-webkit-media-controls-fullscreen-button {
+    filter: invert(1);
+}
+
+.no-results {
+  text-align: center;
+  color: white;
+}
+.result {
+  list-style-type: none;
+  padding: 0;
+}
+
+.browse{
+    color: #fff;
+    margin-left: 20px;
+}
+
+.music-web {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.music-player {
+    border-radius: 5%;
+    background: #1e1e1e;
+    width: 400px;
+    padding: 25px 35px;
+    text-align: left;
+    position: relative; /* Tambahkan posisi relatif untuk konten di dalamnya */
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end; /* Mengubah menjadi flex-end untuk mengarahkan ke kanan */
+  margin-bottom: 30px;
+}
+
+nav .circle {
+  display: flex; /* Tambahkan display flex untuk memungkinkan align-items dan justify-content bekerja */
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  position: absolute; /* Jadikan posisi absolut untuk mengatur posisi secara tepat */
+  top: 20px; /* Sesuaikan dengan kebutuhan vertikal */
+  right: 20px; /* Sesuaikan dengan kebutuhan horizontal */
+}
+
+.song-img {
+  margin-top: 30px;
+  width: 200px;
+  height: 200px;
+  border: 3px solid #000000;
+  box-shadow: 0 5px 10px rgba(186, 186, 186, 0.22);
+  margin-bottom: 10px;
+  border-radius: 5%; /* Tambahkan border-radius untuk membuat gambar lingkaran */
+}
+
+.music-player h1 {
+  font-size: 24px;
+  color: #ffffff; /* Warna teks judul */
+  margin-bottom: 10px; /* Tambahkan margin bottom untuk memisahkan teks dengan paragraf */
+}
+
+.music-player p {
+  font-size: 18px;
+  color: #aaaaaa; /* Warna teks artist */
+  margin-bottom: 10px; /* Tambahkan margin bottom untuk memisahkan paragraf dengan input range */
+}
+
+#progress {
+  -webkit-appearance: none;
+  width: 300px;
+  height: 6px;
+  background: #ffffff;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 20px; /* Pindahkan margin ke bottom untuk memisahkan dengan kontrol */
+}
+
+#progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none; /* Atur penampilan untuk browser non-webkit */
+  background: #838383;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 5px 5px rgba(195, 195, 195, 0.22);
+}
+
+.controls {
+  position: absolute;
+  bottom: 40px;
+  right: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100px; /* Sesuaikan lebar sesuai kebutuhan */
+  height: 100px; /* Sesuaikan tinggi sesuai kebutuhan */
+}
+
+.controls:hover div {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.controls div {
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+  margin-bottom: 30px;
+  background: #1db954;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #181818;
+  
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease; /* Tambahkan transisi untuk efek muncul */
+  opacity: 0;
+  transform: translateY(20px); /* Mulai dengan keadaan tersembunyi */
+}
+
+.controls div:hover {
+  background-color: #1ed760;
+}
+
+.controls.active div {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.time {
+  position: absolute;
+  right:  30px;
+  bottom: 40px;
+  color: #ffffff; /* Warna teks putih */
+  font-size: 14px; /* Ukuran font sesuaikan kebutuhan */
+}
+
+  

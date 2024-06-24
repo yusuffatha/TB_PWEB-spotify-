@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+    <link rel="stylesheet" href="createPL.css">
+    <link rel="icon" href="assets/spotify-logo.png" type="img/png">
+    <style>
+      .profile-icon img {
+      background-color: #f2f2f2;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      vertical-align: middle;
+    }
+     /* Popup Menu */
+     .popup-menu {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #333;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      width: 200px;
+      border-radius: 8px;
+    }
+
+    .popup-menu a {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .popup-menu a:hover {
+      background-color: #575757;
+    }
+
+    .popup-menu hr {
+      border: 1px solid #444;
+      margin: 0;
+    }
+
+    .show {
+      display: block;
+    }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+      <div class="logo">
+        <a href="HomeAfter.php">
+          <img src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_Green.png" alt="Logo" />
+        </a>
+      </div>
+
+      <div class="navigation">
+        <ul>
+          <li>
+            <a href="HomeAfter.php">
+              <span class="fa fa-home"></span>
+              <span>Home</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="search.php">
+              <span class="fa fa-search"></span>
+              <span>Search</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="library.php">
+              <span class="fa fas fa-book"></span>
+              <span>Your Library</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="navigation">
+        <ul>
+          <li>
+            <a href="createPL.html">
+              <span class="fa fas fa-plus-square"></span>
+              <span>Create Playlist</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <span class="fa fas fa-heart"></span>
+              <span>Liked Songs</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="policies">
+        <ul>
+          <li>
+            <a href="#">Cookies</a>
+          </li>
+          <li>
+            <a href="#">Privacy</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="main-container">
+      <div class="topbar">
+        <div class="prev-next-buttons">
+          <button type="button" class="fa fas fa-chevron-left"></button>
+          <button type="button" class="fa fas fa-chevron-right"></button>
+        </div>
+
+        <div class="navbar">
+          <ul>
+            <li>
+              <a href="#">Premium</a>
+            </li>
+            <li>
+              <a href="#">Support</a>
+            </li>
+            <li>
+              <a href="#">Download</a>
+            </li>
+            <li>
+              <a href="#" class="profile-icon" onclick="togglePopup()">
+               <img src="assets/prof_icon.svg" alt="Profile">
+              </a>
+            <div id="popupMenu" class="popup-menu">
+              <!-- <a href="#">Akun <span style="float:right;">&#x2197;</span></a> -->
+              <a href="#">Profil</a>
+              <!-- <a href="#">Upgrade ke Premium <span style="float:right;">&#x2197;</span></a>
+              <a href="#">Pengaturan</a> -->
+              <hr>
+              <a onclick="location.href='index.php';">Keluar</a>
+             </div>
+            </li>    
+        </div>
+      </div>
+
+      <div class="Create-Playlist"> 
+        <h1>Create Playlist</h1>
+        
+        <div class="New-Playlist">
+            <form action="createPL.php" method="POST">
+                <label>Playlist Title</label>
+                <input type="text" placeholder="Title" name="title" id="title">
+                
+                <label>Username</label>
+                <input type="text" placeholder="Username" name="username" id="username">
+
+                <label>Thumbnail</label>
+                <input type="text" placeholder="Thumbnail URL" name="thumbnail" id="thumbnail">
+
+                <label>Description</label>
+                <input type="text" placeholder="Description" name="description" id="description">
+
+                <label for="otherPageUrl">Menu Playlist</label>
+                <input type="text" placeholder="URL playlist" name="otherpageurl" id="otherpageurl">
+
+                <button type="submit">Create</button>
+            </form>
+            <div class="image">
+                <img src="foto/spo-logo.png" all="">
+            </div>
+        </div>
+      </div>
+      
+      <script>
+        function togglePopup() {
+          var popup = document.getElementById("popupMenu");
+          popup.classList.toggle("show");
+        }
+  
+        window.onclick = function(event) {
+          if (!event.target.matches('.profile-icon img')) {
+            var dropdowns = document.getElementsByClassName("popup-menu");
+            for (var i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+      </script>
+
+    <script src="https://kit.fontawesome.com/23cecef777.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
